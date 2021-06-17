@@ -118,8 +118,6 @@ flex-direction:column;
 padding:20px;
 margin-left:20px;
 text-align:start;
-// backdrop-filter: blur(4px);
-// background-color: hsla(0,0%,50.2%,.5);
     z-index: 16;
     height:100vh;
     transform:${props => props.show ? 'translateX(0)' : 'translateX(100%)'};

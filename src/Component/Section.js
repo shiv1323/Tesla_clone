@@ -4,31 +4,33 @@ import styled from 'styled-components'
 import Fade from 'react-reveal/Fade';
 function Section({ title, description, RightBtnText, LeftBtnText, backgroundImg, id }) {
     return (
-        <Wrap bgImage={backgroundImg}>
+        <>
+            <Wrap bgImage={backgroundImg}>
 
-            <Fade bottom>
-                <ItemText>
-                    <h1 id={id} >{title}</h1>
-                    <p>{description}</p>
-                </ItemText>
-            </Fade>
-            <Button>
                 <Fade bottom>
-                    <ButtonGroup>
-                        <LeftButton>
-                            {LeftBtnText}
-                        </LeftButton>
-                        {RightBtnText &&
-                            <RightButton>
-                                {RightBtnText}
-                            </RightButton>
-                        }
-
-                    </ButtonGroup>
-                    <DownArrow src="./images/down-arrow.svg" />
+                    <ItemText>
+                        <h1 id={id} >{title}</h1>
+                        <p>{description}</p>
+                    </ItemText>
                 </Fade>
-            </Button>
-        </Wrap>
+                <Button>
+                    <Fade bottom>
+                        <ButtonGroup>
+                            <LeftButton>
+                                {LeftBtnText}
+                            </LeftButton>
+                            {RightBtnText &&
+                                <RightButton>
+                                    {RightBtnText}
+                                </RightButton>
+                            }
+
+                        </ButtonGroup>
+                    </Fade>
+                </Button>
+            </Wrap>
+            <DownArrow src="./images/down-arrow.svg" />
+        </>
     )
 }
 
@@ -102,5 +104,8 @@ margin:8px;
 const DownArrow = styled.img`
 height:40px;
 animation:animation infinite 1.5s;
+position: absolute;
+    left: 50%;
+    top: 95%;
 `
 // 40
