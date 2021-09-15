@@ -5,11 +5,16 @@ import MenuIcon from '@material-ui/icons/Menu';
 import LanguageIcon from '@material-ui/icons/Language';
 import CloseIcon from '@material-ui/icons/Close';
 import { selectCars } from '../features/car/CarSlice';
+import side from './side'
 import { useSelector } from 'react-redux';
 
 function Header() {
     const [burgerOpen, setburgerOpen] = useState(false);
     const cars = useSelector(selectCars)
+    const x = side.map((name) => {
+        return (<li > <a href="#">{name}</a></li>)
+    })
+    console.log(x);
     return (
 
         <Container>
@@ -37,23 +42,13 @@ function Header() {
                 {cars && cars.map((car, index) => (
                     <li key={index}> <a href="#">{car}</a></li>
                 ))}
+
+                <div className="div">{x}</div>
+
+
                 <li><a href="#solar_roof">Solar Roof</a></li>
-                <li><a href="#solar_panel">Solar Panels</a></li>
-                <li><a href="#">Existing Inventory</a></li>
-                <li><a href="#">Used Inventory</a></li>
-                <li><a href="#">Trade-In</a></li>
-                <li><a href="#">Powerwall</a></li>
-                <li><a href="#">Commercial Energy</a></li>
-                <li><a href="#">Utilities</a></li>
-                <li><a href="#">Test Drive</a></li>
-                <li><a href="#">Charging</a></li>
-                <li><a href="#">Find Us</a></li>
-                <li><a href="#">Support</a></li>
-                <li><a href="#">Careers</a></li>
-                <li><a href="#">Shop</a></li>
-                <li><a href="#">Account</a></li>
-                <li><a href="#">More<ExpandMoreIcon /></a></li>
-                <li><LanguageIcon /><a href="#">United States</a></li>
+                <li><a href="#">More<ExpandMoreIcon style={{ fontSize: "15px" }} /></a></li>
+                <li><LanguageIcon style={{ fontSize: "16px" }} /><a href="#">United States</a></li>
                 <li><a href="#">English</a></li>
 
             </BurgerNav>

@@ -3,7 +3,7 @@ const initialState = {
     cars: ["model S", "model 3", "model Y", "model X"]
 }
 const carSclice = createSlice({
-    name: "car",
+    name: "cars",
     initialState,
     reducers: {}
 })
